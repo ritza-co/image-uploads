@@ -1,9 +1,15 @@
-const Uppy =require('@uppy/core');
-const XHRUpload = require('@uppy/xhr-upload');
-const Dashboard = require('@uppy/dashboard');
+import Uppy from '@uppy/core';
+import XHRUpload from '@uppy/xhr-upload';
+import Dashboard from '@uppy/dashboard';
+const Webcam = require('@uppy/webcam');
 
 const uppy = new Uppy()
-    .use(Dashboard, {
+.use(Dashboard, {
         inline: true,
-        target: '#drag-drop_area',
-    });
+        target: '#drag-drop-area',
+    })
+.use(XHRUpload, {
+        endpoint: 'http://localhost:3000/image',
+        fieldName: 'photo',
+        formData: true,
+})
