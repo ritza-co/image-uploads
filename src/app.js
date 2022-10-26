@@ -5,7 +5,6 @@ const Webcam = require('@uppy/webcam');
 j/url
 
 const uploadUrl = `${process.env.HOST_URL}/image`;
-document.getElementById("debug").innerHTML = uploadUrl;
 const uppy = new Uppy()
     .use(Dashboard, {
         inline: true,

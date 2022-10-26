@@ -6,7 +6,7 @@ const multer = require('multer');
 
 const port = process.env.PORT || 3000;
 const storage = multer.diskStorage({
-    destination: `${__dirname}/uploads/`,
+    destination: `${process.env.PERSISTENT_STORAGE_DIR}`,
     filename: (req, file, cb) => {
         const fileName = `${Date.now()}${path.extname(file.originalname)}`;
         cb(null, fileName);
