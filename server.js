@@ -4,6 +4,7 @@ const cors = require( 'cors');
 const path = require('path');
 const multer = require('multer');
 
+const port = process.env.PORT || 3000;
 const storage = multer.diskStorage({
     destination: `${__dirname}/uploads/`,
     filename: (req, file, cb) => {
@@ -32,7 +33,6 @@ app.post('/image', uploadImage, (req, res) => {
 // have the uploaded image files available at localhost:3000/uploads/<filename>
 app.use('/uploads', express.static('uploads'));
 
-const port = process.env.PORT || 3000;
 
 app.listen(port, () => { 
     console.log("listening on port " + port); 

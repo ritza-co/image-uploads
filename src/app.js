@@ -2,6 +2,7 @@ import Uppy from '@uppy/core';
 import XHRUpload from '@uppy/xhr-upload';
 import Dashboard from '@uppy/dashboard';
 const Webcam = require('@uppy/webcam');
+j/url
 
 const uppy = new Uppy()
 .use(Dashboard, {
@@ -19,19 +20,10 @@ uppy.on('complete', (result) => {
 
         for (const file of result.successful) {
                 // append link to the image to the page as localhost:3000/uploads/<filename>
-                const url = `http://localhost:3000/uploads/${file.response.body.msg}`;
+                const url = `${process.env.HOST_URL}/uploads/${file.response.body.msg}`;
                 const link = document.createElement('a');
                 link.href = url;
-                // link.innerHTML = url;
-
-                // create img element with link as src
-                const img = document.createElement('img');
-                img.src = url;
-                img.style.width = '200px';
-                img.style.height = '200px';
-                
-                // add img to the link
-                link.appendChild(img);
+                link.innerHTML = url;
 
                 const li = document.createElement('li');
                 li.appendChild(link);
