@@ -23,10 +23,14 @@ app.get('/', (req, res) => {
 
 app.post('/image', uploadImage, (req, res) => {
     console.log(req.file);
-    if (req.file) return res.json({msg: 'File uploaded successfully'});
+    // return image name
+    if (req.file) return res.json({msg: req.file.filename});
 
     res.send('Error uploading file');
 });
+
+// have the uploaded image files available at localhost:3000/uploads/<filename>
+app.use('/uploads', express.static('uploads'));
 
 const port = process.env.PORT || 3000;
 

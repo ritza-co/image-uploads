@@ -1,7 +1,9 @@
 {
   "dependencies": {
-    "@uppy/core": "^3.0.3",
+    "@uppy/core": "^3.0.4",
     "@uppy/dashboard": "^3.1.0",
+    "@uppy/instagram": "^3.0.1",
+    "@uppy/tus": "^3.0.4",
     "@uppy/webcam": "^3.2.1",
     "@uppy/xhr-upload": "^3.0.3",
     "cors": "^2.8.5",
