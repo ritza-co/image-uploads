@@ -1,4 +1,8 @@
 node_modules
 src/node_modules
 dist/*
+uploads/*
+src/.parcel-cache/*
+src/dist/*
+.parcel-cache/*
 
