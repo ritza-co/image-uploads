@@ -5,4 +5,5 @@ uploads/*
 src/.parcel-cache/*
 src/dist/*
 .parcel-cache/*
+*.DS_Store
 
