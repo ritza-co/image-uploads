@@ -10,7 +10,7 @@ const uppy = new Uppy()
         target: '#drag-drop-area',
     })
 .use(XHRUpload, {
-        endpoint: 'http://localhost:3000/image',
+        endpoint: `${process.env.HOST_URL}/image`,
         fieldName: 'photo',
         formData: true,
 })
