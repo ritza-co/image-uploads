@@ -12,6 +12,7 @@
     "parcel": "^2.7.0"
   },
   "scripts": {
-      "build": "parcel build --dist-dir dist src/index.html && node server.js"
+      "serve": "node server.js",
+      "build": "parcel build --dist-dir dist src/index.html"
   }
 }
