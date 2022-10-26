@@ -4,13 +4,14 @@ import Dashboard from '@uppy/dashboard';
 const Webcam = require('@uppy/webcam');
 j/url
 
+const uploadUrl = `${process.env.HOST_URL}/image`;
 const uppy = new Uppy()
-.use(Dashboard, {
+    .use(Dashboard, {
         inline: true,
         target: '#drag-drop-area',
     })
-.use(XHRUpload, {
-        endpoint: `${process.env.HOST_URL}/image`,
+    .use(XHRUpload, {
+        endpoint: uploadUrl,
         fieldName: 'photo',
         formData: true,
 })
@@ -19,7 +20,6 @@ uppy.on('complete', (result) => {
         console.log(result);
 
         for (const file of result.successful) {
-                // append link to the image to the page as localhost:3000/uploads/<filename>
                 const url = `${process.env.HOST_URL}/uploads/${file.response.body.msg}`;
                 const link = document.createElement('a');
                 link.href = url;

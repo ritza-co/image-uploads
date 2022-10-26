@@ -30,7 +30,6 @@ app.post('/image', uploadImage, (req, res) => {
     res.send('Error uploading file');
 });
 
-// have the uploaded image files available at localhost:3000/uploads/<filename>
 app.use('/uploads', express.static('uploads'));
 
 
