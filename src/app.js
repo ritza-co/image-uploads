@@ -11,7 +11,7 @@ const uppy = new Uppy()
     })
     .use(XHRUpload, {
         endpoint: uploadUrl,
-        fieldName: 'photo',
+        fieldName: 'userFile',
         formData: true,
 })
 
