@@ -17,6 +17,7 @@ const uppy = new Uppy()
 
 uppy.on('complete', (result) => {
     console.log(result);
+    console.log("hi");
     for (const file of result.successful) {
         const url = `${process.env.STATIC_HOST_URL}/${file.response.body.msg}`;
         const link = document.createElement('a');
