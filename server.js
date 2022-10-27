@@ -13,10 +13,10 @@ const storage = multer.diskStorage({
     }
 });
 
-const uploadImage = multer({ storage }).single('photo');
+const uploadImage = multer({ storage }).single('userFile');
 
 app.use(cors());
-app.use(express. static('dist'));
+app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + "/dist/index.html"));
