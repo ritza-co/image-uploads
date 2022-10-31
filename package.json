@@ -15,5 +15,8 @@
       "serve": "node server.js",
       "build": "parcel build --dist-dir dist src/index.html",
       "postinstall": "npm run build"
-  }
+  },
+  "process": {
+       "global": "{}"
+   }
 }
